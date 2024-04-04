@@ -1,0 +1,465 @@
+# floating point
+adam_beta2:
+- 0.95
+
+# floating point
+adam_eps:
+- 1e-05
+- 1e-09
+
+# floating point
+adam_epsilon:
+- 1e-05
+
+# null / string
+adapter:
+- null
+- lora
+- qlora
+
+# boolean
+auto_resume_from_checkpoints:
+- true
+
+# string
+base_model:
+- ...
+
+# string
+base_model_ignore_patterns: pytorch*
+
+# integer
+batch_size:
+- ...
+
+# string
+bf16:
+- false
+- auto
+- true
+
+# string
+dataset_prepared_path:
+- null
+- last_prepared_run
+- last_run_prepared
+- tilemachos/Demo-Dataset
+
+# list of dictionaries with string keys and string values
+datasets:
+- ...
+
+# boolean + null (optional)
+debug:
+- null
+
+# string + null (optional)
+deepspeed:
+- null
+- deepspeed_configs/zero1.json
+- deepspeed_configs/zero2.json
+
+# string
+device_map: auto
+
+# integer + null + custom input
+early_stopping_patience:
+- null
+- 3
+
+# integer
+eval_batch_size: 1
+
+# integer
+eval_max_new_tokens:
+- 128
+
+# boolean
+eval_sample_packing:
+- false
+
+# null + integer + custom input (optional)
+eval_steps: null
+eval_table_max_new_tokens: 128
+eval_table_size:
+- null
+
+# null + integer 
+evals_per_epoch:
+- null
+- 4
+- 5
+- 0
+
+# boolean + null (optional)
+flash_attention:
+- null
+- false
+- true
+
+# boolean
+flash_attn_cross_entropy:
+- false
+
+# boolean
+flash_attn_fuse_mlp:
+- true
+
+# boolean
+flash_attn_fuse_qkv:
+- false
+
+# boolean
+flash_attn_rms_norm:
+- true
+
+# boolean + null (optional)
+flash_optimum:
+- null
+- true
+
+# boolean
+float16:
+- true
+
+# boolean + null (optional)
+fp16:
+- null
+- false
+- true
+
+# null + list + dictionary
+fsdp:
+- null
+- [full_shard]
+fsdp_config:
+- ...
+
+# boolean
+gptq:
+- false
+- true
+
+# boolean
+gptq_disable_exllama: true
+
+# integer + null (optional)
+gptq_groupsize:
+- null
+
+# null (optional)
+gptq_model_v1:
+- null
+
+# integer
+gradient_accumulation_steps:
+- ...
+
+# boolean + null (optional)
+gradient_checkpointing:
+- null
+- false
+- true
+
+# dictionary
+gradient_checkpointing_kwargs:
+- ...
+
+# boolean
+group_by_length:
+- false
+- true
+
+# boolean
+hf_use_auth_token:
+- true
+
+# floating point
+learning_rate:
+- ...
+
+# boolean
+load_in_4bit:
+- false
+- true
+
+# boolean
+load_in_8bit:
+- false
+- true
+
+# null + string
+local_rank:
+- null
+
+# integer
+logging_steps:
+- ...
+
+# floating point + null (optional)
+lora_alpha:
+- null
+- 32
+- 16
+
+# floating point + null (optional)
+lora_dropout:
+- null
+- 0.05
+- 0.0
+
+# boolean + null (optional)
+lora_fan_in_fan_out:
+- null
+- false
+- true
+
+# string + null (optional)
+lora_model_dir:
+- null
+
+# integer + null
+lora_r:
+- 32
+- 16
+- null
+- 64
+- 8
+
+# boolean + null (optional)
+lora_target_linear:
+- null
+- true
+
+# list of strings + null (optional)
+lora_target_modules:
+- ...
+
+# integer
+loss_watchdog_patience:
+- 3
+
+# floating point
+loss_watchdog_threshold:
+- 5.0
+
+# boolean
+lr_quadratic_warmup:
+- true
+
+# string + null (optional)
+lr_scheduler:
+- null
+- cosine
+
+# floating point
+max_grad_norm:
+- 1.0
+
+# integer + null (optional)
+max_packed_sequence_len:
+- null
+- 2048
+
+# integer
+max_steps: 200
+
+# integer
+micro_batch_size:
+- ...
+
+# string
+model_config:
+- {output_router_logits: true}
+
+# string
+model_type:
+- ...
+
+# integer
+num_epochs:
+- ...
+
+# string
+optimizer:
+- ...
+
+# string
+output_dir:
+- ...
+
+# boolean + null (optional)
+pad_to_sequence_len:
+- null
+- false
+- true
+
+# floating point
+peft:
+  loftq_config:
+    loftq_bits: 4
+
+# dictionary
+pretraining_dataset:
+  ...
+
+# boolean
+push_dataset_to_hub:
+- null
+
+# boolean
+relora_cpu_offload: false
+
+# integer
+relora_steps: 150
+
+# integer
+relora_warmup_steps: 10
+
+# boolean
+resize_token_embeddings_to_32x:
+- true
+
+# string + null (optional)
+resume_from_checkpoint:
+- null
+
+# boolean + null (optional)
+s2_attention:
+- null
+- true
+
+# string + null (optional)
+sample_packing:
+- null
+- false
+- true
+
+# null + string + custom input (optional)
+sample_packing_eff_est: null
+
+# null + string + custom input (optional)
+sample_packing_seq_len_multiplier: null
+
+# null + integer (optional)
+save_safetensors: false
+
+# integer + null (optional)
+save_steps: null
+
+# null + integer (optional)
+save_total_limit:
+- null
+- 2
+
+# integer
+saves_per_epoch:
+- ...
+
+# boolean + null (optional)
+sdp_attention:
+- null
+- true
+
+# integer
+sequence_len:
+- ...
+
+# dictionary
+special_tokens:
+- ...
+
+# boolean
+strict:
+- false
+
+# boolean
+tf32:
+- false
+- true
+
+# string
+tokenizer_config: EleutherAI/gpt-neox-20b
+
+# boolean
+tokenizer_legacy:
+- true
+
+# string
+tokenizer_type:
+- ...
+
+# boolean
+tokenizer_use_fast:
+- true
+
+# null + dictionary (optional)
+tokens:
+- null
+- {bos_token: <s>, eos_token: </s>, unk_token: <unk>}
+- {bos_token: , eos_token: , pad_token: , unk_token: }
+
+# null + string (optional)
+torchdistx_path:
+- null
+
+# null + integer (optional)
+total_num_tokens: null
+
+# boolean
+train_on_inputs:
+- false
+- true
+
+# null + boolean (optional)
+trust_remote_code:
+- null
+- true
+
+# integer
+unfrozen_parameters: null
+
+# floating point
+val_set_size:
+- ...
+
+# null + string (optional)
+wandb_entity:
+- null
+
+# null + string (optional)
+wandb_log_model:
+- null
+
+# null + string (optional)
+wandb_name:
+- null
+
+# null + string (optional)
+wandb_project:
+- null
+- ...
+
+# null + string (optional)
+wandb_run_id: null
+
+
+# null + string (optional)
+wandb_watch:
+- null
+
+# floating point
+warmup_ratio: 0.1
+
+# integer
+warmup_steps:
+- ...
+
+# floating point
+weight_decay:
+- ...
+
+# boolean + null (optional)
+xformers_attention:
+- null
+- true
